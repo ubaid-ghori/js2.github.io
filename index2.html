@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inputField">inputstring:</label>
+    <input type="text" id="inputField">
+    <button onclick="removespaces()">sort</button>
+    <h2>output:</h2>
+    <div id="output"></div>
+    <script>
+        function removespaces(){
+        let input=document.getElementById("inputField").value;
+        let removed=input.replace(/\s/g, '');
+        document.getElementById("output").innerHTML=removed;
+    }
+    </script>
+</body>
+</html>

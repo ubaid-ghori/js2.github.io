@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Generator</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="generateTable()">Generate Table</button>
+  <div id="tableContainer"></div>
+
+  <script>
+    function generateTable() {
+      let rows = prompt("Enter the number of rows:");
+      let columns = prompt("Enter the number of columns:");
+
+      let tableContainer = document.getElementById("tableContainer");
+      let table = document.createElement("table");
+
+      for (let i = 0; i < rows; i++) {
+        let row = table.insertRow();
+
+        for (let j = 0; j < columns; j++) {
+          let cell = row.insertCell();
+          cell.textContent = i === 0 ? "Header " + (j + 1) : "Row " + (i + 1) + ", Column " + (j + 1);
+        }
+      }
+
+      tableContainer.innerHTML = "";
+      tableContainer.appendChild(table);
+    }
+  </script>
+</body>
+</html>
